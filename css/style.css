@@ -10197,6 +10197,9 @@ input[type="submit"]{
  
 /*estilo do botão submit no hover */
 input[type="submit"]:hover{
+}
+  
+  .link1{
   background: #4ab3c6;
      padding-top: 800px;
     position: absolute;
