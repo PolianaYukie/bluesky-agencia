@@ -249,6 +249,33 @@
       duration: 300 // don't foget to change the duration also in CSS
     }
   });
+  $("#form-cadastro").on('submit', function(event){
+	event.preventDefault();
+  })
+  $('#cadastro-ok').on('click', function(){
+	var data= {
+		name: $("#nome_cad").val(),
+		email: $("#email_cad").val(),
+		city: $("#cidade_cad").val(),
+		bornDate: $("#nasc").val(),
+		password: $("#senha_cad").val()
+	}
+	console.log(data);
+	$.ajax({
+		type: "POST",
+		url: "http://localhost:9099/user/create",
+		data: data,
+		success: function(){
+			alert("Sucesso");
+			//window.location = "login.html";
+		},
+		error: function(){
+			console.log("é");
+			alert("Erro");
+		},
+		enctype: 'multipart/form-data',
+	});
+  })
 
   $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
     disableOn: 700,
